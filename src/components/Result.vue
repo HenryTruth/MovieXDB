@@ -1,5 +1,6 @@
 <template>
-  <div class="text-white text-center mt-2">Search result....</div>
+  <div class="text-white text-center mt-2" v-if="Api.length">Search result....</div>
+  <div class="text-white text-center mt-2" v-else>No Search results..</div>
   <section class="grid grid-cols-8 m-10" v-for="api in Api">
     <div class="col-start-1 col-end-2" v-if="api.poster_path">
       <img :src="image(api.poster_path)" alt="" style="max-width:10rem; height:16rem "/>
@@ -54,7 +55,7 @@ export default {
   },
   computed: {
     Api() {
-      return store.state.ApiResult;
+      return store.state.ApiResult
     },
   },
   methods: {
