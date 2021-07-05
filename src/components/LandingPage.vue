@@ -179,7 +179,6 @@ export default{
           console.log(result.results)
           store.state.ApiResult = []
           for(const i in result.results){
-            console.log(result.results[i])
             store.setApiResult(result.results[i])
           }
           this.$router.push('/result')
